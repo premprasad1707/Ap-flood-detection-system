@@ -21,9 +21,9 @@ streamlit run app.py
 
 ## 📊 Demo Screenshots
 
-| Dashboard | Risk Low (Vijayawada) | Risk High (Vizag) |
-|-----------|----------------------|-------------------|
-| ![Dashboard](screenshots/dashboard.png) | ![Low Risk](screenshots/dashboard.png) | ![High Risk](screenshots/map_view.png) |
+| Dashboard | Risk Low | Risk High |
+|-----------|----------|----------|
+| ![Dashboard](screenshots/dashboard.png) | ![Low Risk](screenshots/ml_risk_low.png) | ![High Risk](screenshots/ml_risk_high.png) |
 
 **Live ML**: Sliders trigger RF predictions. Model: `utils/flood_model.pkl` (train w/ `utils/train_model.py`)
 
