@@ -120,6 +120,13 @@ dmypy.json
 .DS_Store
 Thumbs.db
 
+# Local data and system artifacts
+__MACOSX/
+anaconda_projects/
+IMD_AP_Historical Rain Fall/
+data/Canals/
+data/Embankments/
+
 # Data files (if large)
 # Uncomment if needed
 # data/

@@ -4,3 +4,12 @@ AI-powered Flood Early Warning System for agricultural fields along canals and e
 # Run it with:-
 .\venv\Scripts\activate
 streamlit run app.py
+
+## Screenshots
+
+![Dashboard](screenshots/dashboard.png)
+
+![Map View](screenshots/map_view.png)
+
+![Risk Analysis](screenshots/risk_report.png)
+
