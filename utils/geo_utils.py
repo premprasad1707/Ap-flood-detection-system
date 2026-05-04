@@ -6,24 +6,42 @@ import streamlit as st
 def load_shapefiles(canals_path="data/Canals", embankments_path="data/Embankments"):
     """
     Load Canals and Embankments shapefiles using GeoPandas.
-    Fixes CRS to epsg=4326 for Folium compatibility.
+    Mock if empty/permission denied (for demo).
     """
-    
     canals = None
     embankments = None
     
-    if os.path.exists(canals_path):
-        canals = gpd.read_file(canals_path)
-        # Assume CRS is already correct to speed up loading
-        if canals.crs is None:
-            canals = canals.set_crs(epsg=4326)
-            
-    if os.path.exists(embankments_path):
-        embankments = gpd.read_file(embankments_path)
-        # Assume CRS is already correct to speed up loading
-        if embankments.crs is None:
-            embankments = embankments.set_crs(epsg=4326)
-            
+    try:
+        if os.path.exists(canals_path) and os.path.isdir(canals_path):
+            # Try to find .shp
+            shp_file = None
+            for f in os.listdir(canals_path):
+                if f.endswith('.shp'):
+                    shp_file = os.path.join(canals_path, f)
+                    break
+            if shp_file:
+                canals = gpd.read_file(shp_file)
+                if canals.crs is None:
+                    canals = canals.set_crs(epsg=4326)
+    except Exception as e:
+        print(f'Canals load failed ({e}): using mock')
+        canals = None
+    
+    try:
+        if os.path.exists(embankments_path) and os.path.isdir(embankments_path):
+            shp_file = None
+            for f in os.listdir(embankments_path):
+                if f.endswith('.shp'):
+                    shp_file = os.path.join(embankments_path, f)
+                    break
+            if shp_file:
+                embankments = gpd.read_file(shp_file)
+                if embankments.crs is None:
+                    embankments = embankments.set_crs(epsg=4326)
+    except Exception as e:
+        print(f'Embankments load failed ({e}): using mock')
+        embankments = None
+        
     return canals, embankments
 
 @st.cache_data
