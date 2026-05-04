@@ -19,20 +19,6 @@ streamlit run app.py
 ```
 → **http://localhost:8501**
 
-## 📊 Demo Screenshots (Live App Captures)
-
-**Full Gallery**:
-
-| Dashboard | Live ML Dashboard | Map View |
-|-----------|-------------------|----------|
-| ![Dashboard](screenshots/dashboard.png) | ![Live ML](screenshots/live_ml_dashboard.png) | ![Map](screenshots/map_view.png) |
-
-| ML Dashboard | Risk Low | Risk High | Risk Report |
-|--------------|----------|-----------|-------------|
-| ![ML Dashboard](screenshots/ml_dashboard.png) | ![Low Risk](screenshots/ml_risk_low.png) | ![High Risk](screenshots/ml_risk_high.png) | ![Report](screenshots/risk_report.png) |
-
-**Live ML**: Sliders trigger RF predictions. Model: `utils/flood_model.pkl` (train w/ `utils/train_model.py`). All screenshots from running app.
-
 ## 🛠 Tech Stack
 - **Frontend**: Streamlit + Folium + Custom CSS
 - **ML**: scikit-learn RF Classifier
@@ -47,5 +33,5 @@ streamlit run app.py
 
 ⭐ **Star/Fork** for AP flood monitoring!
 
-[Demo Video](screenshots/) | [Live Repo](https://github.com/premprasad1707/Ap-flood-detection-system)
+[Live Repo](https://github.com/premprasad1707/Ap-flood-detection-system)
 
